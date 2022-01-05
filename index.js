@@ -24,5 +24,31 @@ inquirer
         name: 'installation',
         message: 'What installation directions you would like to provide your user?',
     },
-}
-]
+    {
+        type: 'input',
+        name: 'usage',
+        message: 'What is the user story for this project?',
+    },
+    {
+        type: 'checkbox',
+        name: 'license',
+        message: 'Which license would you like to use?',
+        choices: ['Mozilla-Public','Common Development and Distribution License', 'Eclipse Public License','Apache', 'BSD', 'MIT', 'GNU LGPL', 'GPL', 'Proprietary', 'none'],
+    },
+        
+    {
+        type: 'input',
+        name: 'contributing',
+        message: 'How can others contribute to this project?',
+    },
+    {
+        type: 'input',
+        name: 'tests',
+        message: 'How can this prohect be tested?',
+    },
+    {
+        type: 'input',
+        name: 'questions',
+        message: 'Where can users send questions?',
+    }
+])
