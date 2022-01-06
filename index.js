@@ -49,7 +49,7 @@ function init() {
                 type: 'checkbox',
                 name: 'license',
                 message: 'Which license would you like to use?',
-                choices: ['Mozilla-Public', 'Common%20Development%20and%20Distribution%20License', 'Eclipse%20Public%20License', 'Apache', 'BSD', 'MIT', 'GNU LGPL', 'GPL', 'Proprietary', 'none'],
+                choices: ['Mozilla-Public', 'Common Development and Distribution License', 'Eclipse Public License', 'Apache', 'BSD', 'MIT', 'GNU LGPL', 'GPL', 'Proprietary', 'none'],
             },
 
             {
