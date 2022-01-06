@@ -31,9 +31,16 @@ function init() {
                 message: 'How would you like to describe your project?',
             },
             {
-                type: 'input',
+                type: 'checkbox',
                 name: 'tableOfContents',
-                message: 'What would you like to include in your table of contents? Separate your entries with commas.'
+                message: 'What would you like to include in your table of contents? Select from below.',
+                choices: [ '- [Description](#description)',
+               '- [Installation](#installation)',
+               '- [Usage](#usage)',
+               '- [Contributing](#contributing)',
+               '- [Testing](#testing)',
+               '- [Questions](#questions)',
+                ]
             },
             {
                 type: 'input',
@@ -69,9 +76,6 @@ function init() {
             }
         ])
         .then((answers) => {
-            let tocArray = answers.tableOfContents.toLowerCase().split(',');
-            answers.tableOfContents = tocArray;
-            const readmeContent = generateMarkdown(answers);
             console.log(answers);
             writeToFile("README.md", generateMarkdown(answers));
         });
