@@ -12,10 +12,40 @@ function renderLicenseBadge(license) {
 
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  if (license[0] == "") {
-
+  if (license.length > 0) {
+    if (license[0] == "Mozilla-Public") {
+      return "https://opensource.org/licenses/MPL-2.0";
+    }
+    else if (license[0] == "Common Development and Distribution License") {
+      return "https://opensource.org/licenses/CDDL-1.0";
+    }
+    else if (license[0] == "Eclipse Public License") {
+      return "https://opensource.org/licenses/EPL-2.0";
+    }
+    else if (license[0] == "Apache") {
+      return "https://opensource.org/licenses/Apache-2.0";
+    }
+    else if (license[0] == "BSD") {
+      return "https://opensource.org/licenses/BSD-2-Clause";
+    }
+    else if (license[0] == "MIT") {
+      return "https://opensource.org/licenses/MIT";
+    }
+    else if (license[0] == "GNU LGPL") {
+      return "https://opensource.org/licenses/lgpl-license";
+    }
+    else if (license[0] == "GPL") {
+      return "https://opensource.org/licenses/gpl-license";
+    }
+    else if (license[0] == "Proprietary") {
+      return "Proprietary License";
+    } else {
+      return "None Provided";
+    }
   }
- }
+}
+
+
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
@@ -53,7 +83,8 @@ function generateMarkdown(data) {
   ${data.description} 
   ## Installation: ${data.installation} 
   ## Usage: ${data.usage} 
-  ## License: ${data.license} 
+  ## License: 
+  ${renderLicenseLink(data.license)} 
   ## Contributing: ${data.contributing} 
   ## Testing: ${data.tests} 
   ## Questions: ${data.questions}`;
