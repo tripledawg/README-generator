@@ -33,8 +33,7 @@ function init() {
             {
                 type: 'input',
                 name: 'tableOfContents',
-                message: 'What would you like to include in your table of contents?'
-                //use concatenation and \n new line command to make it, maybe use a foreach?
+                message: 'What would you like to include in your table of contents? Separate your entries with commas.'
             },
             {
                 type: 'input',
@@ -50,7 +49,7 @@ function init() {
                 type: 'checkbox',
                 name: 'license',
                 message: 'Which license would you like to use?',
-                choices: ['Mozilla-Public', 'Common Development and Distribution License', 'Eclipse Public License', 'Apache', 'BSD', 'MIT', 'GNU LGPL', 'GPL', 'Proprietary', 'none'],
+                choices: ['Mozilla-Public', 'Common%20Development%20and%20Distribution%20License', 'Eclipse%20Public%20License', 'Apache', 'BSD', 'MIT', 'GNU LGPL', 'GPL', 'Proprietary', 'none'],
             },
 
             {
@@ -70,6 +69,8 @@ function init() {
             }
         ])
         .then((answers) => {
+            let tocArray = answers.tableOfContents.toLowerCase().split(',');
+            answers.tableOfContents = tocArray;
             const readmeContent = generateMarkdown(answers);
             console.log(answers);
             writeToFile("README.md", generateMarkdown(answers));
