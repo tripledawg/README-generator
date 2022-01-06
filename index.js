@@ -48,7 +48,7 @@ function init() {
             {
                 type: 'input',
                 name: 'installation',
-                message: 'What installation directions you would like to provide your user?',
+                message: 'What installation directions would you like to provide your user?',
                 validate: input => {
                     if (input) {
                         return true;
