@@ -116,6 +116,32 @@ function init() {
                         return false;
                     }
                 }
+            },
+            {
+                type: 'input',
+                name: 'githubProfile',
+                message: 'What is your Github username?',
+                validate: input => {
+                    if (input) {
+                        return true;
+                    } else {
+                        console.log('Please provide those interested with your Github username.');
+                        return false;
+                    }
+                }
+            },
+            {
+                type: 'input',
+                name: 'email',
+                message: 'What is your email address?',
+                validate: input => {
+                    if (input) {
+                        return true;
+                    } else {
+                        console.log('Please provide those interested with your email address.');
+                        return false;
+                    }
+                }
             }
         ])
         .then((answers) => {
@@ -134,5 +160,5 @@ function writeToFile(fileName, data) {
 };
 
 
-// Function call to initialize app
+// function call to initialize app
 init();
