@@ -45,15 +45,19 @@ function init() {
                     '- [Testing](#testing)',
                     '- [Questions](#questions)',
                 ],
+                validate: choice => {
+                    if (choice[3]) {
+                        return true; 
+                    } else 
+                        return '';
+                }
                 // validate: choice => {
-                //     if (choice[3]) {
+                //     if (choice[4]) {
                 //         return true; 
                 //     } else {
-
-
+                //         return '';
                 //     }
-                
-                // }
+                // }         
             },
             {
                 type: 'input',
@@ -124,11 +128,11 @@ function init() {
                     }
                 }
             },
-            {
-                type: 'input',
-                name: 'email',
-                message: 'What is your email address?'
-            }, 
+            // {
+            //     type: 'input',
+            //     name: 'email',
+            //     message: 'What is your email address?'
+            // }, 
             {
                 type: 'input',
                 name: 'fileNamePrefix',

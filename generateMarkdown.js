@@ -74,8 +74,8 @@ function generateMarkdown(data) {
   ${data.tests} 
   ## Questions: 
   ${data.questions}
-  <https://github.com/${data.githubProfile}>
-  <${data.email}>`;
+  
+  <https://github.com/${data.githubProfile}>`;
 }
 //connects to global namespace for use in index.js
 module.exports = generateMarkdown;
