@@ -62,13 +62,18 @@ function generateMarkdown(data) {
 
   ## Description:
   ${data.description} 
-  ## Installation: ${data.installation} 
-  ## Usage: ${data.usage} 
+  ## Installation: 
+  ${data.installation} 
+  ## Usage: 
+  ${data.usage} 
   ## License: 
   ${renderLicenseLink(data.license)} 
-  ## Contributing: ${data.contributing} 
-  ## Testing: ${data.tests} 
-  ## Questions: ${data.questions}
+  ## Contributing: 
+  ${data.contributing} 
+  ## Testing: 
+  ${data.tests} 
+  ## Questions: 
+  ${data.questions}
   <https://github.com/${data.githubProfile}>
   <${data.email}>`;
 }

@@ -4,7 +4,7 @@ const fs = require('fs');
 const generateMarkdown = require('./generateMarkdown');
 
 // function to initialize app with array of questions for user input
-// essential input is validated while non-essential inputs are allowed to be blank. 
+// essential input is validated while non-essential inputs are allowed to be blank. git 
 function init() {
     inquirer
         .prompt([
@@ -97,7 +97,7 @@ function init() {
                     if (input) {
                         return true;
                     } else {
-                        console.log('Please provide those interested with a way to contact you.');
+                        console.log('Please provide users a way to contact you.');
                         return false;
                     }
                 }
@@ -123,7 +123,7 @@ function init() {
             {
                 type: 'input',
                 name: 'fileNamePrefix',
-                message: 'Would you like to add a custom prefix to your README?'
+                message: 'Would you like to add a custom prefix to your README? If so, type it here. Otherwise, leave blank.'
             }
         ])
         .then((answers) => {
