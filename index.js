@@ -119,11 +119,16 @@ function init() {
                 type: 'input',
                 name: 'email',
                 message: 'What is your email address?'
+            }, 
+            {
+                type: 'input',
+                name: 'fileNamePrefix',
+                message: 'Would you like to add a custom prefix to your README?'
             }
         ])
         .then((answers) => {
             console.log(answers);
-            writeToFile("README.md", generateMarkdown(answers));
+            writeToFile(answers.fileNamePrefix + "README.md", generateMarkdown(answers)); //this prevents overwriting in case I want to use my README for the actual plus a sample
         });
 };
 

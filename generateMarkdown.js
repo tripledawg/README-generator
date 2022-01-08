@@ -1,4 +1,5 @@
 // function that returns a license badge based on which license is passed in
+// used split/join methods to allow for licenses with more than one wordRE
 // If there is no license, returns an empty string
 function renderLicenseBadge(license) {
   if (license.length > 0) {
@@ -8,7 +9,7 @@ function renderLicenseBadge(license) {
 }
 
 //function that returns the license link
-// If there is no license, returns "none provided"
+//If there is no license, returns "none provided"
 function renderLicenseLink(license) {
   if (license.length > 0) {
     if (license[0] == "Mozilla-Public") {
