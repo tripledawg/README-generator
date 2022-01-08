@@ -44,7 +44,16 @@ function init() {
                     '- [Contributing](#contributing)',
                     '- [Testing](#testing)',
                     '- [Questions](#questions)',
-                ]
+                ],
+                // validate: choice => {
+                //     if (choice[3]) {
+                //         return true; 
+                //     } else {
+
+
+                //     }
+                
+                // }
             },
             {
                 type: 'input',
