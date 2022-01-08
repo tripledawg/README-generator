@@ -4,6 +4,7 @@ const fs = require('fs');
 const generateMarkdown = require('./generateMarkdown');
 
 // function to initialize app with array of questions for user input
+// essential input is validated while non-essential inputs are allowed to be blank. 
 function init() {
     inquirer
         .prompt([
@@ -66,7 +67,7 @@ function init() {
                     if (input) {
                         return true;
                     } else {
-                        console.log('A professional README should have a user story!');
+                        console.log('A professional README should have usage information');
                         return false;
                     }
                 }
@@ -81,28 +82,12 @@ function init() {
             {
                 type: 'input',
                 name: 'contributing',
-                message: 'How can others contribute to this project?',
-                validate: input => {
-                    if (input) {
-                        return true;
-                    } else {
-                        console.log('Please enter contribution instructions to continue.');
-                        return false;
-                    }
-                }
+                message: 'How can others contribute to this project?'
             },
             {
                 type: 'input',
                 name: 'tests',
-                message: 'How can this project be tested?',
-                validate: input => {
-                    if (input) {
-                        return true;
-                    } else {
-                        console.log('Please enter testing instructions to continue.');
-                        return false;
-                    }
-                }
+                message: 'How can this project be tested?'
             },
             {
                 type: 'input',
@@ -125,7 +110,7 @@ function init() {
                     if (input) {
                         return true;
                     } else {
-                        console.log('Please provide those interested with your Github username.');
+                        console.log('Please provide your Github username.');
                         return false;
                     }
                 }
@@ -133,15 +118,7 @@ function init() {
             {
                 type: 'input',
                 name: 'email',
-                message: 'What is your email address?',
-                validate: input => {
-                    if (input) {
-                        return true;
-                    } else {
-                        console.log('Please provide those interested with your email address.');
-                        return false;
-                    }
-                }
+                message: 'What is your email address?'
             }
         ])
         .then((answers) => {
